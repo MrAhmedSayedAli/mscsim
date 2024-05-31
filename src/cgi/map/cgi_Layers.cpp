@@ -383,6 +383,7 @@ void Layers::readLayerSatellite( const fdm::XmlNode &node, osg::Group *parent )
 
 void Layers::readSatelliteImage( osg::Group *parent, const char *file )
 {
+#ifdef USE_GDAL
     // images should be in World Mercator WGS-84 (EPSG:3395) projection
     char proj4_merc[] = { "+proj=merc +lon_0=0 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs" };
 
@@ -446,4 +447,5 @@ void Layers::readSatelliteImage( osg::Group *parent, const char *file )
     {
         Log::e() << "Cannot open dataset: " << file << std::endl;
     }
+#endif // USE_GDAL
 }

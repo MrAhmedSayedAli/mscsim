@@ -20,6 +20,8 @@
  * IN THE SOFTWARE.
  ******************************************************************************/
 
+#ifdef USE_GDAL
+
 #include <cgi/cgi_GeoTIFF.h>
 
 #ifdef WIN32
@@ -262,3 +264,5 @@ double GeoTIFF::getMapH() const
 
     return std::numeric_limits< double >::quiet_NaN();
 }
+
+#endif // USE_GDAL

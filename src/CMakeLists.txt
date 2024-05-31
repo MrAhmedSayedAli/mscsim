@@ -95,8 +95,10 @@ find_library( ALUT_LIBRARY alut )
 
 ################################################################################
 
-find_library( X11_LIBRARY X11 )
-find_library( XSS_LIBRARY Xss )
+if( UNIX )
+    find_library( X11_LIBRARY X11 )
+    find_library( XSS_LIBRARY Xss )
+endif()
 
 ################################################################################
 
